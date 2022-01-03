@@ -21,9 +21,9 @@ const HomeScreen = (props) => {
                     // FlatList Item Separator
                     <View
                         style={{
-                            height: 0.9,
+                            height: 0.2,
                             width: '100%',
-                            backgroundColor: 'white'
+                            backgroundColor: 'grey'
                         }}
                     />
                 );
@@ -63,18 +63,18 @@ const HomeScreen = (props) => {
                             </TouchableOpacity>
                     </View>
                     <View style={styles.topView2}>
-                            <TouchableOpacity onPress={console.log("Edit is Tapped")}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Edit')}>
                             <Image
                                 source={require('../assets/images/edit.png')}
                                 style={styles.buttonImageIconStyle2}
                             />
                             </TouchableOpacity>
-                            </View>
+                    </View>
                     <Text style={styles.decription}>{item.description}</Text>
                     <View style={styles.updatedDate}>
                         <Text style={styles.createdDate}>{item.createdDate}</Text>
 
-                        <Text style={{color:'white'}}>{item.updatedDate}</Text>
+                        <Text style={{color:'#949494'}}>{item.updatedDate}</Text>
                     </View>
                     <Text style={styles.isDeleted}>{item.isDeleted}</Text>
                 </View>
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     color: 'white'
 },
 createdDate: {
-    color:'white'
+    color:'#949494'
 
 },
 container: {
@@ -165,7 +165,7 @@ title: {
 decription: {
     fontSize: 14,
     margin: 5,
-    color: 'white',
+    color: '#F0F0F0',
 
 },
 buttonImageIconStyle: {
@@ -182,6 +182,7 @@ buttonImageIconStyle2: {
     width: 25,
     resizeMode: 'stretch',
     justifyContent:'flex-end',
+    
 },
 topView: {
     margin:3,

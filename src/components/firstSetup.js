@@ -32,14 +32,14 @@ const styles = StyleSheet.create({
       margin:30,
     },
     button:{
-      height:81,
+      height:85,
       width:80,
       borderWidth: 3,
       borderRadius: 100,
       borderColor: '#DF790C',
     },
     create:{
-      fontSize: 63,
+      fontSize: 65,
       color:'#DF790C', 
     },
     btnaln:{

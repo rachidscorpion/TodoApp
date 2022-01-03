@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { CREATETASK } from '../reducers/actions'
 
 
-const TaskScreen = (props) => {
+const EditTask = (props) => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
 
@@ -54,7 +54,7 @@ const mapStateToProps = (state, props) => {
     return {task: state.data}
 }
 
-export default connect(mapStateToProps)(TaskScreen)
+export default connect(mapStateToProps)(EditTask)
 
 const styles = StyleSheet.create({
     modalview:{
