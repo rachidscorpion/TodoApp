@@ -15,7 +15,8 @@ export default (state=initialState, action) => {
             state.data.splice(action.index, 1)
         return state
         case EDIT:
-            console.log(state.data[action.id])
+            state.data[action.id].title = action.inpttitle
+            state.data[action.id].description = action.inptdescription
         return state
         default:
             return state
