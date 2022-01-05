@@ -131,8 +131,8 @@ const styles = StyleSheet.create({
       backgroundColor: '#000000',
   },
   allbutton2:{
-    height:70,
-    width:70,
+    height:65,
+    width:65,
     margin:20,
     alignItems:'center',
     borderRadius: 100,
