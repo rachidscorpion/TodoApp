@@ -63,6 +63,8 @@ const HomeScreen = (props) => {
                             </TouchableOpacity>
                     </View>
                     <View style={styles.topView2}>
+                    <Text style={styles.decription}>{item.description}</Text>
+
                             <TouchableOpacity onPress={() => props.navigation.navigate('Edit')}>
                             <Image
                                 source={require('../assets/images/edit.png')}
@@ -70,7 +72,6 @@ const HomeScreen = (props) => {
                             />
                             </TouchableOpacity>
                     </View>
-                    <Text style={styles.decription}>{item.description}</Text>
                     <View style={styles.updatedDate}>
                         <Text style={styles.createdDate}>{item.createdDate}</Text>
 
@@ -193,7 +194,7 @@ topView: {
 topView2: {
     margin:3,
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     
 },
 
