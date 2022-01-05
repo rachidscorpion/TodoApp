@@ -5,6 +5,7 @@ import HomeScreen from './src/screens/HomeScreen'
 import TaskScreen from './src/screens/TaskScreen';
 import EditTask from './src/screens/EditTask';
 import { StyleSheet } from 'react-native';
+import SplashScreen from './src/screens/SplashScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -13,7 +14,9 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{title:'TodoApp', headerStyle:{
+      <Stack.Screen name="Splash" component={SplashScreen} options={{title:'TodoApp', headerShown: false, headerBackVisible:false,
+}}/>
+        <Stack.Screen name="Home" component={HomeScreen} options={{title:'TodoApp', headerBackVisible:false, headerStyle:{
           backgroundColor:'#000000', 
         }, headerTitleStyle:{color:'white'}}}/>
         <Stack.Screen name="Task" component={TaskScreen} options={{title:'Create Task', headerStyle:{
