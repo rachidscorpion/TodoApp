@@ -1,4 +1,4 @@
-import { CREATE, DELETE } from "./actions";
+import { CREATE, DELETE, EDIT } from "./actions";
 import {obj} from '../components/createTask'
 import moment from "moment";
 
@@ -13,6 +13,9 @@ export default (state=initialState, action) => {
         return state
         case DELETE:
             state.data.splice(action.index, 1)
+        return state
+        case EDIT:
+            console.log(state.data[action.id])
         return state
         default:
             return state

@@ -1,20 +1,19 @@
 import React, {useState} from 'react'
 import {View, Text, TouchableOpacity, StyleSheet, TextInput, Alert} from 'react-native'
 import { connect } from 'react-redux';
-import { CREATETASK } from '../reducers/actions'
+import { EDITTASK } from '../reducers/actions'
 
 
 const EditTask = (props) => {
-    let data = props.route.params
-    const [title, setTitle] = useState(props.task[data.id].title)
-    const [description, setDescription] = useState(props.task[data.id].description)
+    let param = props.route.params.id
+    const [title, setTitle] = useState(props.task[param].title)
+    const [description, setDescription] = useState(props.task[param].description)
 
-    // const creattask = (title, description) => {
-    //     let data = {title, description}
-    //     props.dispatch(CREATETASK(data))
-    //     props.navigation.navigate('Home')
-    //     console.log(props.task)
-    // }
+    const edittask = (title, description) => {
+        let data = {title, description, param}
+        props.dispatch(EDITTASK(data))
+        props.navigation.navigate('Home')
+    }
 
     openAlert = () => {
         Alert.alert("Task title cannot be empty")
@@ -41,7 +40,7 @@ const EditTask = (props) => {
                     if (title === '' || title.length === 0){
                         openAlert()
                     }else{
-                        creattask(title, description)
+                        edittask(title, description)
                     }
                     }}style={styles.allbutton}>
                     <Text style={styles.text}>Done</Text>
