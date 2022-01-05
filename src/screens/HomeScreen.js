@@ -65,7 +65,7 @@ const HomeScreen = (props) => {
                     <View style={styles.topView2}>
                     <Text style={styles.decription}>{item.description}</Text>
 
-                            <TouchableOpacity onPress={() => props.navigation.navigate('Edit')}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate('Edit', {id : item.id})}>
                             <Image
                                 source={require('../assets/images/edit.png')}
                                 style={styles.buttonImageIconStyle2}

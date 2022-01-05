@@ -5,15 +5,16 @@ import { CREATETASK } from '../reducers/actions'
 
 
 const EditTask = (props) => {
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
+    let data = props.route.params
+    const [title, setTitle] = useState(props.task[data.id].title)
+    const [description, setDescription] = useState(props.task[data.id].description)
 
-    const creattask = (title, description) => {
-        let data = {title, description}
-        props.dispatch(CREATETASK(data))
-        props.navigation.navigate('Home')
-        console.log(props.task)
-    }
+    // const creattask = (title, description) => {
+    //     let data = {title, description}
+    //     props.dispatch(CREATETASK(data))
+    //     props.navigation.navigate('Home')
+    //     console.log(props.task)
+    // }
 
     openAlert = () => {
         Alert.alert("Task title cannot be empty")
@@ -23,11 +24,13 @@ const EditTask = (props) => {
         <View style={styles.body}>
 
             <TextInput style={styles.inputtitle} placeholder='Title' placeholderTextColor='#ADACAC' 
+            defaultValue={title}
             autoCorrect={false} onChangeText={(i) => setTitle(i)}
             /> 
 
             <View style={styles.inputdescription}>
             <TextInput style={{color:'white',}}placeholder='description(optional)' placeholderTextColor='#ADACAC' 
+            defaultValue={description}
             autoCorrect={false} multiline={true} onChangeText={(i) => setDescription(i)}
             />
             </View>
@@ -41,7 +44,7 @@ const EditTask = (props) => {
                         creattask(title, description)
                     }
                     }}style={styles.allbutton}>
-                    <Text style={styles.text}>Create</Text>
+                    <Text style={styles.text}>Done</Text>
                 </TouchableOpacity>
              </View>
 
