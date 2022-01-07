@@ -14,6 +14,7 @@ const TaskScreen = props => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
+  // eslint-disable-next-line no-shadow
   const creattask = (title, description) => {
     let data = {title, description};
     props.dispatch(CREATETASK(data));
@@ -37,6 +38,7 @@ const TaskScreen = props => {
 
       <View style={styles.inputdescription}>
         <TextInput
+          // eslint-disable-next-line react-native/no-inline-styles
           style={{color: 'white'}}
           placeholder="description(optional)"
           placeholderTextColor="#ADACAC"

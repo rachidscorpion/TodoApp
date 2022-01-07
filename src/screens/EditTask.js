@@ -15,6 +15,7 @@ const EditTask = props => {
   const [title, setTitle] = useState(props.task[param].title);
   const [description, setDescription] = useState(props.task[param].description);
 
+  // eslint-disable-next-line no-shadow
   const edittask = (title, description) => {
     let data = {title, description, param};
     props.dispatch(EDITTASK(data));
@@ -65,6 +66,7 @@ const EditTask = props => {
     </View>
   );
 };
+// eslint-disable-next-line no-lone-blocks
 {
   /* <View style={{borderWidth:2, borderColor:'#34495E', marginLeft:10, marginRight:10, marginTop:3}}></View> */
 }

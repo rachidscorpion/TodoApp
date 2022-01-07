@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
 import {
   View,
@@ -7,13 +8,18 @@ import {
   Image,
   TouchableOpacity,
   Alert,
-  BackHandler,
 } from 'react-native';
 import {connect} from 'react-redux';
 import FirstSetup from '../components/firstSetup';
 import {DELETETASK} from '../reducers/actions';
+import SplashScreen from 'react-native-splash-screen';
 
 const HomeScreen = props => {
+  useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 4000);
+  });
   useEffect(() =>
     props.navigation.addListener('focus', () => {
       setRefresh(!refresh);
